@@ -187,7 +187,14 @@ public class PowerAccent : IDisposable
         string[] charInfoCollection = Array.Empty<string>();
         foreach (string character in characters)
         {
-            charInfoCollection = charInfoCollection.Append<string>(GetCharacterDescription(character)).ToArray<string>();
+            if (_settingService.TestSetting)
+            {
+                charInfoCollection = charInfoCollection.Append<string>("The description is: " + GetCharacterDescription(character)).ToArray<string>();
+            }
+            else
+            {
+                charInfoCollection = charInfoCollection.Append<string>(GetCharacterDescription(character)).ToArray<string>();
+            }
         }
 
         return charInfoCollection;

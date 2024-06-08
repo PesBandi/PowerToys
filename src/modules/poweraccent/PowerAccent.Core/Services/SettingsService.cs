@@ -99,6 +99,7 @@ public class SettingsService
                         }
 
                         ShowUnicodeDescription = settings.Properties.ShowUnicodeDescription;
+                        TestSetting = settings.Properties.TestSetting;
                         SortByUsageFrequency = settings.Properties.SortByUsageFrequency;
                         StartSelectionFromTheLeft = settings.Properties.StartSelectionFromTheLeft;
                     }
@@ -213,6 +214,21 @@ public class SettingsService
         set
         {
             _showUnicodeDescription = value;
+        }
+    }
+
+    private bool _testSetting;
+
+    public bool TestSetting
+    {
+        get
+        {
+            return _testSetting;
+        }
+
+        set
+        {
+            _testSetting = value;
         }
     }
 

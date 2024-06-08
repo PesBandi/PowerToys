@@ -285,6 +285,24 @@ namespace Microsoft.PowerToys.Settings.UI.ViewModels
             }
         }
 
+        public bool TestSetting
+        {
+            get
+            {
+                return _powerAccentSettings.Properties.TestSetting;
+            }
+
+            set
+            {
+                if (value != _powerAccentSettings.Properties.TestSetting)
+                {
+                    _powerAccentSettings.Properties.TestSetting = value;
+                    OnPropertyChanged(nameof(TestSetting));
+                    RaisePropertyChanged();
+                }
+            }
+        }
+
         public bool SortByUsageFrequency
         {
             get
