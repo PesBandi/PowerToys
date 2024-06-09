@@ -3435,11 +3435,17 @@ Activate by holding the key for the character you want to add an accent to, then
   <data name="QuickAccent_Language.Header" xml:space="preserve">
     <value>Characters</value>
   </data>
-  <data name="QuickAccent_SelectedLanguage.Header" xml:space="preserve">
-    <value>Choose a character set</value>
+  <data name="QuickAccent_SelectedLanguages.Header" xml:space="preserve">
+    <value>Choose characters sets</value>
   </data>
-  <data name="QuickAccent_SelectedLanguage.Description" xml:space="preserve">
-    <value>Show only accented characters common to the selected set</value>
+  <data name="QuickAccent_SelectedLanguages.Description" xml:space="preserve">
+    <value>Show only accented characters common to the selected sets</value>
+  </data>
+  <data name="QuickAccent_SelectedLanguages_SelectAll.Content" xml:space="preserve">
+    <value>Select all</value>
+  </data>
+  <data name="QuickAccent_SelectedLanguages_DeselectAll.Content" xml:space="preserve">
+    <value>Deselect all</value>
   </data>
   <data name="QuickAccent_SelectedLanguage_All.Content" xml:space="preserve">
     <value>All available</value>

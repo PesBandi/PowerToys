@@ -49,48 +49,64 @@
                 </controls:SettingsGroup>
 
                 <controls:SettingsGroup x:Uid="QuickAccent_Language" IsEnabled="{x:Bind ViewModel.IsEnabled, Mode=OneWay}">
-                    <tkcontrols:SettingsCard x:Uid="QuickAccent_SelectedLanguage" HeaderIcon="{ui:FontIcon Glyph=&#xF2B7;}">
-                        <ComboBox MinWidth="{StaticResource SettingActionControlMinWidth}" SelectedIndex="{x:Bind Path=ViewModel.SelectedLangIndex, Mode=TwoWay}">
-                            <!--  These should be in the same order as the array items in PowerAccentViewModel.cs  -->
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_All" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Catalan" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Crimean" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Currency" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Croatian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Czech" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Danish" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Gaeilge" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Gaidhlig" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Dutch" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Greek" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Estonian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Esperanto" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Finnish" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_French" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_German" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Hebrew" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Hungarian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Icelandic" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_IPA" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Italian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Kurdish" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Lithuanian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Macedonian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Maori" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Norwegian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Pinyin" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Polish" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Portuguese" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Romanian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Slovak" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Slovenian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Spanish" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Serbian" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Swedish" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Turkish" />
-                            <ComboBoxItem x:Uid="QuickAccent_SelectedLanguage_Welsh" />
-                        </ComboBox>
-                    </tkcontrols:SettingsCard>
+                    <tkcontrols:SettingsExpander x:Uid="QuickAccent_SelectedLanguages" HeaderIcon="{ui:FontIcon Glyph=&#xF2B7;}">
+                        <tkcontrols:SettingsExpander.Items>
+                            <tkcontrols:SettingsCard ContentAlignment="Left">
+                                <StackPanel>
+                                    <StackPanel Orientation="Horizontal" Spacing="8" Margin="0,0,0,8">
+                                        <Button x:Uid="QuickAccent_SelectedLanguages_SelectAll" />
+                                        <Button x:Uid="QuickAccent_SelectedLanguages_DeselectAll" />
+                                    </StackPanel>
+                                    <ItemsControl>
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <tkcontrols:WrapPanel Orientation="Horizontal" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.Items>
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_All" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Catalan" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Crimean" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Currency" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Croatian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Czech" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Danish" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Gaeilge" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Gaidhlig" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Dutch" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Greek" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Estonian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Esperanto" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Finnish" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_French" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_German" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Hebrew" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Hungarian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Icelandic" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_IPA" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Italian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Kurdish" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Lithuanian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Macedonian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Maori" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Norwegian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Pinyin" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Polish" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Portuguese" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Romanian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Slovak" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Slovenian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Spanish" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Serbian" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Swedish" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Turkish" />
+                                            <CheckBox x:Uid="QuickAccent_SelectedLanguage_Welsh" />
+                                        </ItemsControl.Items>
+                                    </ItemsControl>
+                                </StackPanel>
+                            </tkcontrols:SettingsCard>
+                        </tkcontrols:SettingsExpander.Items>
+                    </tkcontrols:SettingsExpander>
                 </controls:SettingsGroup>
 
                 <controls:SettingsGroup x:Uid="QuickAccent_Toolbar" IsEnabled="{x:Bind ViewModel.IsEnabled, Mode=OneWay}">
