@@ -12,7 +12,8 @@ public class QueryHelperTests
 {
     [DataTestMethod]
     [DataRow("2²", "4")]
-    [DataRow("2³", "8")]
+    [DataRow("2**4-2³", "8")]
+    [DataRow("2¹²+abs(pi⁴)⁰", "4097")]
     [DataRow("2！", "2")]
     [DataRow("2\u00A0*\u00A02", "4")] // Non-breaking space
     [DataRow("20:10", "2")] // Colon as division

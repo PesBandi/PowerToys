@@ -4,6 +4,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text.RegularExpressions;
 
 namespace Microsoft.CmdPal.Ext.Calc.Helper;
@@ -38,6 +39,7 @@ public static partial class CalculateHelper
         { "％", "%" }, { "﹪", "%" },
         { "−", "-" }, { "–", "-" }, { "—", "-" },
         { "！", "!" },
+        { "**", "^" },
         { "*", "×" }, { "∗", "×" }, { "·", "×" }, { "⊗", "×" }, { "⋅", "×" }, { "✕", "×" }, { "✖", "×" }, { "\u2062", "×" },
         { "/", "÷" }, { "∕", "÷" }, { "➗", "÷" }, { ":", "÷" },
     };
@@ -49,9 +51,10 @@ public static partial class CalculateHelper
         { "÷", "/" },
     };
 
-    private static readonly Dictionary<string, string> SuperscriptReplacements = new()
+    private static readonly Dictionary<char, char> SuperscriptMap = new()
     {
-        { "²", "^2" }, { "³", "^3" },
+        { '¹', '1' }, { '²', '2' }, { '³', '3' }, { '⁴', '4' }, { '⁵', '5' },
+        { '⁶', '6' }, { '⁷', '7' }, { '⁸', '8' }, { '⁹', '9' }, { '⁰', '0' },
     };
 
     private static readonly HashSet<char> StandardOperators = [
@@ -112,10 +115,8 @@ public static partial class CalculateHelper
         }
 
         // Replace superscript characters with their engine equivalents (e.g., '²' -> '^2')
-        foreach (var (key, value) in SuperscriptReplacements)
-        {
-            input = input.Replace(key, value);
-        }
+        input = Regex.Replace(input, @"[¹²³⁴⁵⁶⁷⁸⁹⁰]+", match =>
+            "^" + string.Concat(match.Value.Select(c => SuperscriptMap.TryGetValue(c, out var replacement) ? replacement : c)));
 
         return input;
     }
